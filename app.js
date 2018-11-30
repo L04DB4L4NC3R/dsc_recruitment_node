@@ -13,6 +13,7 @@ mongoose.connection.once("open",()=>console.log("connected"))
 .on("error",()=>console.log("error connecting to db"));
 
 app.use("/",require("./routes/user"));
+app.use("/",require("./routes/admin"));
 
 app.use((err,req,res,next)=>{
     console.log(err);
