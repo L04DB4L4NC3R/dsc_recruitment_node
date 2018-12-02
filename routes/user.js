@@ -19,7 +19,7 @@ router.post("/record", (req,res,next)=>{
 
 
 router.post("/manager/record", (req,res,next)=>{
-    users.findOne({reg:req.body.reg})
+    users.findOne({reg:req.body.reg, email:req.body.email})
     .then((u)=>{
         if(!u)
             return res.json({message:"No user exists"});
@@ -27,7 +27,7 @@ router.post("/manager/record", (req,res,next)=>{
         if(u.applicanttype != "manager")
             return res.json({message:`Sorry, you have already responded some other domain`});
 
-        users.findOneAndUpdate({reg:req.body.reg},{
+        users.findOneAndUpdate({reg:req.body.reg, email:req.body.email},{
             q1:req.body.q1,
             q2:req.body.q2,
             q3:req.body.q3,
