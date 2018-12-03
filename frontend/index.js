@@ -201,10 +201,7 @@ $(document).ready(function(){
 
 
     $('#final-submit').click(function() {
-        $('.form').fadeOut(300);
-        setTimeout(function(){
-            $('.thank-you').fadeIn(600);
-        },300)
+       
         var fname = document.getElementById("fname").value;
         var regno = document.getElementById("regno").value;
         var emailaddress = document.getElementById("emailaddress").value;
@@ -236,5 +233,12 @@ $(document).ready(function(){
             }
         };
         JSON.stringify(submission);
+        $.post("/record",submission,(data,status)=>{
+            console.log(JSON.stringify(data) )
+        })
+        $('.form').fadeOut(300);
+        setTimeout(function(){
+            $('.thank-you').fadeIn(600);
+        },300)
     });
 });
