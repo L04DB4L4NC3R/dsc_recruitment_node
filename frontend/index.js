@@ -11,23 +11,23 @@ $(document).ready(function(){
         },300);
     })
 
-    var technical = 0;
-    var management = 0;
-    var designing = 0;
-    var machinelearning = 0;
-    var frontend = 0;
-    var backend = 0;
-    var android = 0;
-    var python = 0;
-    var general = 0;
-    var uiux = 0;
-    var graphic = 0;
-    var video = 0;
-    var manager = 0;
-    var content = 0;
-    var x = 0;
-    var y = 0;
-    var z = 0;
+    var technical = false;
+    var management = false;
+    var designing = false;
+    var machinelearning = false;
+    var frontend = false;
+    var backend = false;
+    var android = false;
+    var python = false;
+    var general = false;
+    var uiux = false;
+    var graphic = false;
+    var video = false;
+    var manager = false;
+    var content = false;
+    var x = false;
+    var y = false;
+    var z = false;
 
     $('#technical').click(function(){
         technical = !technical;
@@ -222,18 +222,18 @@ $(document).ready(function(){
             phoneNumber       : phno,
             emailAddress  : emailaddress,
             technical : technical,
-            designing : designing,
+            design : designing,
             management : management,
-            design:{
+            sub_design:{
                 uiux : uiux,
                 graphic : graphic,
                 video : video
             },
-            management:{
+            sub_management:{
                 writer : content,
                 manager : manager
             },
-            technical:{
+            sub_technical:{
                 machinelearning : machinelearning,
                 frontend : frontend,
                 backend : backend,
@@ -242,9 +242,17 @@ $(document).ready(function(){
                 general : general
             }
         };
-        JSON.stringify(submission);
-        $.post("/record",submission,(data,status)=>{
-            console.log(status)
+        $.ajax({
+            url:"/record",
+            data:JSON.stringify(submission),
+            method:"post",
+            contentType:"application/json",
+            success:(d)=>{
+                if(d.message){
+                    alert(d.message)
+                }
+                console.log(d)
+            }
         })
         $('.form').fadeOut(300);
         setTimeout(function(){

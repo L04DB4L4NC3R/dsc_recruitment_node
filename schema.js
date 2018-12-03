@@ -25,7 +25,7 @@ module.exports.users = mongoose.model("user", new mongoose.Schema({
             type: Boolean,
             default: false
         },
-        designing : {
+        design : {
             type: Boolean,
             default: false
         },
@@ -33,7 +33,7 @@ module.exports.users = mongoose.model("user", new mongoose.Schema({
             type: Boolean,
             default: false
         },
-        design:{
+        sub_design:{
             uiux : {
                 type: Boolean,
                 default: false
@@ -47,7 +47,7 @@ module.exports.users = mongoose.model("user", new mongoose.Schema({
                 default: false
             }
         },
-        management:{
+        sub_management:{
             writer : {
                 type: Boolean,
                 default: false
@@ -57,7 +57,7 @@ module.exports.users = mongoose.model("user", new mongoose.Schema({
                 default: false
             }
         },
-        technical:{
+        sub_technical:{
             machinelearning : {
                 type: Boolean,
                 default: false
