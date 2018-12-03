@@ -1,0 +1,391 @@
+body{
+    padding:0px;
+    margin:0px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@font-face {
+    font-family: Karla-Bold;
+    src: url('assets/fonts/Karla-Bold.ttf');
+}
+
+@font-face {
+    font-family: Karla-Bold-Italic;
+    src: url('assets/fonts/Karla-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Karla-Regular-Italic;
+    src: url('assets/fonts/Karla-Italic.ttf');
+}
+
+@font-face {
+    font-family: Karla-Regular;
+    src: url('assets/fonts/Karla-Regular.ttf');
+}
+
+
+.main-holder{
+    height: 100vh;
+    width: 100%;
+    background: #ffffff;
+    font-family: Karla-Regular,sans-serif;
+}
+
+.home-page{
+    height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+.domains{
+    display: none;
+}
+
+.technical-sub{
+    display: none;
+}
+
+.management-sub{
+    display: none;
+}
+
+.designing-sub{
+    display: none;
+}
+
+.form{
+    display: none;
+}
+
+.thank-you{
+    display: none;
+}
+
+.home-page-holder{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.dsc-logo{
+    height: 40vh;
+    width: 40vh;
+    border:0px;
+    outline:none;
+    border-radius: 50%;
+    background: url('assets/images/dsc-logo.svg');
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    transform:translate(-50%,0%);
+    cursor: pointer;
+}
+
+.home-page-holder p{
+    height: 100px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.domains{
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+.domains-holder{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.subdomains .domains-holder{
+    width: 65vw;
+}
+
+.domain-category{
+    height: 35vh;
+    width: 35vh;
+    min-width: 230px;
+    min-height: 230px;
+    display: inline-block;
+    border:2px solid #333333;
+    border-radius:5%;
+    margin: 20px 20px;
+    text-align: center;
+    font-family: Karla-Bold;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.domain-category-clicked{
+    background: #0084f3;
+}
+
+.domain-category-clicked p{
+    color: #ffffff;
+}
+
+.domain-category input{
+    float:right;
+    margin-top: 10px;
+    margin-right:10px;
+    height: 20px;
+    width: 20px;
+}
+
+.domain-logo{
+    height: 40%;
+    width: 40%;
+    border:0px;
+    outline:none;
+    object-fit: 100% auto;
+    position: relative;
+    margin-top: 20%;
+}
+
+.domain-category-holder{
+    height: 100%;
+    width: 100%;
+}
+
+.domain-category-clicked #technical img{
+    background: url('assets/images/domains/TechnicalActive.svg');
+    background-size: cover;
+}
+
+.domain-category-clicked #designing img{
+    background: url('assets/images/domains/DesigningActive.svg');
+    background-size: 100% auto;
+}
+
+.domain-category-clicked #management img{
+    background: url('assets/images/domains/ManagementActive.svg');
+    background-size: 100% auto;
+}
+
+.domain-category-clicked #machinelearning img{
+    background: url('assets/images/technicalsubdomains/MachineLearningActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #frontend img{
+    background: url('assets/images/technicalsubdomains/FrontendActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #backend img{
+    background: url('assets/images/technicalsubdomains/BackendActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #android img{
+    background: url('assets/images/technicalsubdomains/AndroidActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #python img{
+    background: url('assets/images/technicalsubdomains/PythonActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #general img{
+    background: url('assets/images/technicalsubdomains/GeneralActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #uiux img{
+    background: url('assets/images/designsubdomains/UIUXActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #video img{
+    background: url('assets/images/designsubdomains/VideoActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #graphic img{
+    background: url('assets/images/designsubdomains/GraphicActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #manager img{
+    background: url('assets/images/managementsubdomains/ManagerActive.svg');
+    background-size: 100% 100%;
+}
+
+.domain-category-clicked #content img{
+    background: url('assets/images/managementsubdomains/ContentActive.svg');
+    background-size: 100% 100%;
+}
+
+#technical img{
+    background: url('assets/images/domains/Technical.svg');
+    background-size: cover;
+}
+
+#designing img{
+    background: url('assets/images/domains/Designing.svg');
+    background-size: 100% auto;
+}
+
+#management img{
+    background: url('assets/images/domains/Management.svg');
+    background-size: 100% auto;
+}
+
+#machinelearning img{
+    background: url('assets/images/technicalsubdomains/MachineLearning.svg');
+    background-size: 100% 100%;
+}
+
+#frontend img{
+    background: url('assets/images/technicalsubdomains/Frontend.svg');
+    background-size: 100% 100%;
+}
+
+#backend img{
+    background: url('assets/images/technicalsubdomains/Backend.svg');
+    background-size: 100% 100%;
+}
+
+#python img{
+    background: url('assets/images/technicalsubdomains/Python.svg');
+    background-size: 100% 100%;
+}
+
+#android img{
+    background: url('assets/images/technicalsubdomains/Android.svg');
+    background-size: 100% 100%;
+}
+
+#general img{
+    background: url('assets/images/technicalsubdomains/General.svg');
+    background-size: 100% 100%;
+}
+
+#uiux img{
+    background: url('assets/images/designsubdomains/UIUX.svg');
+    background-size: 100% 100%;
+}
+
+#video img{
+    background: url('assets/images/designsubdomains/Video.svg');
+    background-size: 100% 100%;
+}
+
+#graphic img{
+    background: url('assets/images/designsubdomains/Graphic.svg');
+    background-size: 100% 100%;
+}
+
+#manager img{
+    background: url('assets/images/managementsubdomains/Manager.svg');
+    background-size: 100% 100%;
+}
+
+#content img{
+    background: url('assets/images/managementsubdomains/Content.svg');
+    background-size: 100% 100%;
+}
+
+
+.domain-category p{
+    margin-top: 40px;
+}
+
+.subdomains .domain-category{
+    height: 20vh;
+    width: 20vh;
+}
+
+.form input{
+    height: 45px;
+    width: 80vw;
+    max-width: 500px;
+    border-radius: 10px;
+    border:2px solid #0084f3;
+    padding-left: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 17px;
+    transform:translate(-50%,0%);
+    position: relative;
+    left: 50%;
+    display: block;
+}
+
+.form .domains-holder{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+input:focus{
+    outline:none;
+}
+
+.submit{
+    height: 50px;
+    width: 150px;
+    background:#00ccff;
+    margin:auto auto;
+    margin-top: 60px;
+    border-radius: 50px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 50px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 715px) {
+
+    .domains .domains-holder{
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform:translate(-50%,0%);
+        text-align: center;
+    }
+
+    .subdomains .domains-holder{
+        width: 100vw;
+    }
+
+}
+
+@media only screen and (max-width: 552px) {
+
+    .subdomains .domains-holder{
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform:translate(-50%,0%);
+        text-align: center;
+    }
+
+}
