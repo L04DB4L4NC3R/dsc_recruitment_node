@@ -206,6 +206,16 @@ $(document).ready(function(){
         var regno = document.getElementById("regno").value;
         var emailaddress = document.getElementById("emailaddress").value;
         var phno = document.getElementById("phno").value;
+
+        switch (checkForm(fname, regno, emailaddress, phno) ){
+            case 1: alert("Invalid registration number entered"); return;
+            case 2: alert("Invalid email entered"); return;
+            case 3: alert("Invalid name entered"); return;
+            case 4: alert("Invalid phone number entered"); return;
+            case 5: alert("all fields must be filled"); return;
+            default: break;
+        }
+
         var submission = {
             firstName : fname,
             registrationNumber  : regno,
@@ -234,11 +244,28 @@ $(document).ready(function(){
         };
         JSON.stringify(submission);
         $.post("/record",submission,(data,status)=>{
-            console.log(JSON.stringify(data) )
+            console.log(status)
         })
         $('.form').fadeOut(300);
         setTimeout(function(){
             $('.thank-you').fadeIn(600);
         },300)
     });
+
+
+    function checkForm(name, regno, email, ph) {
+        if(!name || !regno || !email || !ph)
+            return 5;
+        if(!regno.match(/^1[5-9]...[0-9][0-9][0-9][0-9]$/))
+            return 1;
+        if(!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
+            return 2;
+        if(!name.match(/[a-zA-Z ]*/))
+            return 3;
+        if(!ph.match(/^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/))
+            return 4;
+        return 0;
+    }
+
+
 });
