@@ -12,11 +12,13 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="index.js">
+
+        </script>
+
         <div class="main-holder">
 
             <form name="registration-form">
-
 
 
                 <div class="home-page">
@@ -87,7 +89,7 @@
 
                         <h2>Choose Technical Sub Domain</h2>
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="machinelearning">
 
@@ -100,7 +102,7 @@
                         </div>
 
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="frontend">
 
@@ -112,7 +114,7 @@
 
                         </div>
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="backend">
 
@@ -124,7 +126,7 @@
 
                         </div>
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="python">
 
@@ -136,7 +138,7 @@
 
                         </div>
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="android">
 
@@ -148,7 +150,7 @@
 
                         </div>
 
-                        <div class="domain-category">
+                        <div class="smaller domain-category">
 
                             <div class="domain-category-holder" id="general">
 
@@ -162,7 +164,11 @@
 
 
 
-                        <div class="submit" id="secondary-submit-form-technical">Next</div>
+                        <div class="submit techsubmitter" id="secondary-submit-form-technical">Next</div>
+
+                        <div class="submit back">
+                            Reset
+                        </div>
 
                     </div>
 
@@ -199,7 +205,11 @@
 
                         </div>
 
-                        <div class="submit" id="secondary-submit-form-management">Next</div>
+                        <div class="submit managesubmitter" id="secondary-submit-form-management">Next</div>
+
+                        <div class="submit back">
+                            Reset
+                        </div>
 
                     </div>
 
@@ -249,7 +259,11 @@
                         </div>
 
 
-                        <div class="submit" id="secondary-submit-form-designing">Next</div>
+                        <div class="submit designsubmitter" id="secondary-submit-form-designing">Next</div>
+
+                        <div class="submit back">
+                            Reset
+                        </div>
 
                     </div>
 
@@ -260,25 +274,90 @@
 
                     <div class="domains-holder">
 
-                        <input type="text" placeholder="Name" name="fname" id="fname" required>
-                        <input type="text" placeholder="Registration Number" name="regno" id="regno" required>
-                        <input type="email" placeholder="Email Address" name="emailaddress" id="emailaddress" required>
-                        <input type="text" placeholder="Phone Number" name="phno" id="phno" required>
+                        <input type="text" placeholder="Name" name="fname" id="fname">
+                        <input type="text" placeholder="Registration Number" name="regno" id="regno">
+                        <input type="text" placeholder="Email Address" name="emailaddress" id="emailaddress">
+                        <input type="text" placeholder="Phone Number" name="phno" id="phno">
 
                         <div class="submit" id="final-submit"> Submit</div>
+
+                        <div class="submit back">
+                            Reset
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="questions">
+
+                    <div class="questions-holder">
+
+                        <div class="question" id="question-one">
+
+                            <h1>Question One</h1>
+
+                            <textarea class="answer" id="answer-one"></textarea>
+
+                        </div>
+
+                        <div class="question" id="question-two">
+
+                            <h1>Question Two</h1>
+
+                            <textarea class="answer" id="answer-two"></textarea>
+
+                        </div>
+
+                        <div class="question" id="question-three">
+
+                            <h1>Question Three</h1>
+
+                            <textarea class="answer" id="answer-three"></textarea>
+
+                        </div>
+
+                        <div class="question" id="question-four">
+
+                            <h1>Question Four</h1>
+
+                            <textarea class="answer" id="answer-four"></textarea>
+
+                        </div>
+
+                        <div class="question" id="question-five">
+
+                            <h1>Question Five</h1>
+
+                            <textarea class="answer" id="answer-five"></textarea>
+
+                        </div>
+
+                        <div class="submit back">
+
+                            Reset
+
+                        </div>
+
+                        <div class="submit" id="question-previous">
+
+                            Previous
+
+                        </div>
+
+                        <div class="submit" id="question-next">
+
+                            Next
+
+                        </div>
 
                     </div>
 
                 </div>
 
                 <div class="thank-you">
-                    <div class="domains-holder">
-                        <p>
-                            Thank you for regsitering!
-                        </p>
-                    </div>
+                    <h1>Thank you for regsitering!</h1>
                 </div>
-
 
             </form>
 

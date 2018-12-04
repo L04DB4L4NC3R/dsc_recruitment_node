@@ -23,40 +23,40 @@ $(document).ready(function(){
         x=0;
         y=0;
         z=0;
-        technical = false;
-        management = false;
-        designing = false;
-        machinelearning = false;
-        frontend = false;
-        backend = false;
-        android = false;
-        python = false;
-        general = false;
-        uiux = false;
-        graphic = false;
-        video = false;
-        manager = false;
-        content = false;
+        technical = 0;
+        management = 0;
+        designing = 0;
+        machinelearning = 0;
+        frontend = 0;
+        backend = 0;
+        android = 0;
+        python = 0;
+        general = 0;
+        uiux = 0;
+        graphic = 0;
+        video = 0;
+        manager = 0;
+        content = 0;
         $('.domain-category').removeClass('domain-category-clicked');
         setTimeout(function(){
             $('.domains').fadeIn(600);
         },300)
     });
 
-    var technical = false;
-    var management = false;
-    var designing = false;
-    var machinelearning = false;
-    var frontend = false;
-    var backend = false;
-    var android = false;
-    var python = false;
-    var general = false;
-    var uiux = false;
-    var graphic = false;
-    var video = false;
-    var manager = false;
-    var content = false;
+    var technical = 0;
+    var management = 0;
+    var designing = 0;
+    var machinelearning = 0;
+    var frontend = 0;
+    var backend = 0;
+    var android = 0;
+    var python = 0;
+    var general = 0;
+    var uiux = 0;
+    var graphic = 0;
+    var video = 0;
+    var manager = 0;
+    var content = 0;
     var x = 0;
     var y = 0;
     var z = 0;
@@ -319,38 +319,29 @@ $(document).ready(function(){
                     var regno = document.getElementById("regno").value;
                     var emailaddress = document.getElementById("emailaddress").value;
                     var phno = document.getElementById("phno").value;
-                    var q1 = document.getElementById("answer-one").value;
-                    var q2= document.getElementById("answer-two").value;
-                    var q3 = document.getElementById("answer-three").value;
-                    var q4 = document.getElementById("answer-four").value;
-                    var q5 = document.getElementById("answer-five").value;
-                    console.table(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5)
-                    switch (checkForm(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5) ){
-                        case 1: alert("Invalid registration number entered"); return;
-                        case 2: alert("Invalid email entered"); return;
-                        case 3: alert("Invalid name entered"); return;
-                        case 4: alert("Invalid phone number entered"); return;
-                        case 5: alert("all fields must be filled"); return;
-                        default: break;
-                    }
+                    var questionone = document.getElementById("question-one").value;
+                    var questiontwo= document.getElementById("question-two").value;
+                    var questionthree = document.getElementById("question-three").value;
+                    var questionfour = document.getElementById("question-four").value;
+                    var questionfive = document.getElementById("question-five").value;
                     var submission = {
                         firstName : fname,
                         registrationNumber  : regno,
                         phoneNumber       : phno,
                         emailAddress  : emailaddress,
                         technical : technical,
-                        design : designing,
+                        designing : designing,
                         management : management,
-                        sub_design:{
+                        design:{
                             uiux : uiux,
                             graphic : graphic,
                             video : video
                         },
-                        sub_management:{
+                        management:{
                             writer : content,
                             manager : manager
                         },
-                        sub_technical:{
+                        technical:{
                             machinelearning : machinelearning,
                             frontend : frontend,
                             backend : backend,
@@ -359,43 +350,19 @@ $(document).ready(function(){
                             general : general
                         },
                         answers:{
-                            answerone : q1,
-                            answertwo : q2,
-                            answerthree : q3,
-                            answerfour : q4,
-                            answerfive : q5
+                            answerone : questionone,
+                            answertwo : questiontwo,
+                            answerthree : questionthree,
+                            answerfour : questionfour,
+                            answerfive : questionfive
                         }
                     };
-                    $.ajax({
-                        url:"/record",
-                        data:JSON.stringify(submission),
-                        method:"post",
-                        contentType:"application/json",
-                        success:(d)=>{
-                            if(d.message){
-                                alert(d.message)
-                            }
-                            console.log(d)
-                        }
-                    })
+                    JSON.stringify(submission);
                 },300);
             }
         },300);
     })
-    function checkForm(name, regno, email, ph,q1,q2,q3,q4,q5) {
-        if(!name || !regno || !email || !ph || !q1 || !q2 || !q3 
-            || !q4 || !q4)
-            return 5;
-        if(!regno.match(/^1[5-9]...[0-9][0-9][0-9][0-9]$/))
-            return 1;
-        if(!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
-            return 2;
-        if(!name.match(/[a-zA-Z ]*/))
-            return 3;
-        if(!ph.match(/^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/))
-            return 4;
-        return 0;
-    }
+
     $('#question-previous').click(function(){
         question_number--;
         $('.question').fadeOut(300);

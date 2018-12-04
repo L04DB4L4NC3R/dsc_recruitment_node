@@ -28,7 +28,6 @@ body{
     src: url('assets/fonts/Karla-Regular.ttf');
 }
 
-
 .main-holder{
     height: 100vh;
     width: 100%;
@@ -62,6 +61,22 @@ body{
     display: none;
 }
 
+.techsubmitter{
+    display: none;
+}
+
+.designsubmitter{
+    display: none;
+}
+
+.managesubmitter{
+    display: none;
+}
+
+.questions{
+    display: none;
+}
+
 .thank-you{
     display: none;
 }
@@ -85,8 +100,27 @@ body{
     object-fit: cover;
     position: relative;
     left: 50%;
-    transform:translate(-50%,0%);
+    transform:translate(-50%,0%) scale(0.95);
     cursor: pointer;
+    opacity: 0.8;
+    animation: dscbounce 3s ease .4s infinite;
+}
+
+@keyframes dscbounce{
+    0%{
+        transform:translate(-50%,0%) scale(0.95);
+        opacity: 0.8;
+    }
+
+    50%{
+        transform:translate(-50%,0%) scale(1.05);
+        opacity: 1;
+    }
+
+    100%{
+        transform:translate(-50%,0%) scale(0.95);
+        opacity: 0.8;
+    }
 }
 
 .home-page-holder p{
@@ -130,6 +164,58 @@ body{
     font-family: Karla-Bold;
     background: #ffffff;
     cursor: pointer;
+    transform:translateY(40px);
+    opacity: 0;
+    animation: domainfade .4s ease forwards;
+}
+
+
+@keyframes domainfade{
+    0%{
+        transform:translateY(40px);
+        opacity: 0;
+    }
+
+    100%{
+        transform:translateY(0px);
+        opacity: 1;
+    }
+}
+
+.domain-category:nth-child(2){
+    animation-delay: .2s;
+}
+
+.domain-category:nth-child(3){
+    animation-delay: .3s;
+}
+
+.domain-category:nth-child(4){
+    animation-delay: .4s;
+}
+
+.domain-category:nth-child(5){
+    animation-delay: .5s;
+}
+
+.domain-category:nth-child(6){
+    animation-delay: .6s;
+}
+
+.domain-category:nth-child(7){
+    animation-delay: .7s;
+}
+
+.domain-category:nth-child(8){
+    animation-delay: .8s;
+}
+
+.domain-category:nth-child(9){
+    animation-delay: .9s;
+}
+
+.domain-category:nth-child(10){
+    animation-delay: 1s;
 }
 
 .domain-category-clicked{
@@ -313,6 +399,11 @@ body{
     width: 20vh;
 }
 
+.smaller{
+    min-height: 200px;
+    min-width: 200px;
+}
+
 .form input{
     height: 45px;
     width: 80vw;
@@ -343,6 +434,61 @@ input:focus{
     outline:none;
 }
 
+.questions-holder{
+    height: 80vh;
+    width: 70vw;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+}
+
+.questions-holder h1{
+    color: #0084f3;
+    font-size: 60px;
+    width: 100%;
+    transform:translateY(40px);
+    opacity: 0;
+    animation: domainfade .4s ease .2s forwards;
+}
+
+.thank-you h1{
+    color: #0084f3;
+    font-size: 60px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-100%);
+    text-align: center;
+}
+
+.answer{
+    border: 2px #333333 solid;
+    height: 40vh;
+    width: 70vw;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    max-width: 70vw;
+    max-height: 40vh;
+    transform:translateY(40px);
+    opacity: 0;
+    animation: domainfade .4s ease .3s forwards;
+}
+
+.questions-holder .submit{
+    float: left;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.answer:focus{
+    outline: none;
+    border:#0084f3 2px solid;
+}
+
 .submit{
     height: 50px;
     width: 150px;
@@ -354,11 +500,23 @@ input:focus{
     color: #ffffff;
     font-size: 20px;
     line-height: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     cursor: pointer;
 }
 
-@media only screen and (max-width: 715px) {
+.back{
+    margin-top: 30px;
+}
+
+#question-previous{
+    display: none;
+}
+
+#question-two,#question-three,#question-four,#question-five{
+    display: none;
+}
+
+@media only screen and (max-width: 831px) {
 
     .domains .domains-holder{
         height: auto;
@@ -366,7 +524,7 @@ input:focus{
         position: absolute;
         top: 0%;
         left: 50%;
-        transform:translate(-50%,0%);
+        transform:translate(-50%,30px);
         text-align: center;
     }
 
@@ -384,7 +542,7 @@ input:focus{
         position: absolute;
         top: 0%;
         left: 50%;
-        transform:translate(-50%,0%);
+        transform:translate(-50%,30px);
         text-align: center;
     }
 
