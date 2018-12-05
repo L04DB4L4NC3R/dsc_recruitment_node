@@ -257,10 +257,18 @@ $(document).ready(function(){
 
 
     $('#final-submit').click(function() {
-        $('.form').fadeOut(300);
-        setTimeout(function(){
-            $('.questions').fadeIn(600);
-        },300);
+        var fname = document.getElementById("fname").value;
+        var regno = document.getElementById("regno").value;
+        var emailaddress = document.getElementById("emailaddress").value;
+        var phno = document.getElementById("phno").value;
+        if(fname=="" && regno=="" && phno=="" && emailaddress==""){
+        }
+        else{
+            $('.form').fadeOut(300);
+            setTimeout(function(){
+                $('.questions').fadeIn(600);
+            },300);
+        }
     });
 
     function SubmitChecker(){
@@ -377,7 +385,7 @@ $(document).ready(function(){
                             }
                             console.log(d)
                         }
-                    })
+                    });
                 },300);
             }
         },300);
