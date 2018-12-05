@@ -332,7 +332,7 @@ $(document).ready(function(){
                     var q3 = document.getElementById("answer-three").value;
                     var q4 = document.getElementById("answer-four").value;
                     var q5 = document.getElementById("answer-five").value;
-                    console.table(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5)
+                    //console.table(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5)
                     switch (checkForm(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5) ){
                         case 1: alert("Invalid registration number entered"); return;
                         case 2: alert("Invalid email entered"); return;
