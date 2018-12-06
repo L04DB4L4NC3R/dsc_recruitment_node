@@ -21,7 +21,7 @@ app.get("/fill",(req,res,next)=>{
     res.sendFile(__dirname + "/frontend/index.html");
 });
 app.get("/",recaptcha.middleware.render,(req,res,next)=>{
-    res.send({captcha:res.recaptcha});
+    res.sendFile(__dirname + "/frontend/captcha.html")//({captcha:res.recaptcha});
 });
 app.post("/",recaptcha.middleware.verify,(req,res,next)=>{
     if(!req.recaptcha.error)
