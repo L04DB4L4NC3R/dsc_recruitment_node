@@ -31,5 +31,17 @@ router.post("/show", (req,res,next)=>{
 });
 
 
+router.post("/show/all", (req,res,next)=>{
+    jwt.verify(req.get("Authorization"), process.env.SECRET, (err, data)=>{
+        if(err || data.level != "admin")
+            return res.json({message:"Invalid token"});
+        users.find({})
+        .then(d=>res.json(d))
+        .catch(next);
+    })
+    
+});
+
+
 
 module.exports = router;

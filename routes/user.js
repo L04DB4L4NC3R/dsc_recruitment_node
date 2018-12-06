@@ -6,8 +6,7 @@ router.post("/record", (req,res,next)=>{
         return res.redirect("/")
    
     if(!req.body.firstName || !req.body.registrationNumber || !req.body.emailAddress || 
-        !req.body.phoneNumber || !req.body.answers.answerone || !req.body.answers.answertwo || 
-        !req.body.answers.answerthree || !req.body.answers.answerfour || !req.body.answers.answerfive)
+        !req.body.phoneNumber)
         return res.json({message:"No fields should be empty"});
 
     if(!req.body.registrationNumber.match(/^1[5-9]...[0-9][0-9][0-9][0-9]$/))
