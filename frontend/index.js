@@ -261,14 +261,19 @@ $(document).ready(function(){
         var regno = document.getElementById("regno").value;
         var emailaddress = document.getElementById("emailaddress").value;
         var phno = document.getElementById("phno").value;
-        if(fname=="" && regno=="" && phno=="" && emailaddress==""){
+        switch (checkForm(fname, regno, emailaddress, phno) ){
+            case 1: alert("Invalid registration number entered"); return;
+            case 2: alert("Invalid email entered"); return;
+            case 3: alert("Invalid name entered"); return;
+            case 4: alert("Invalid phone number entered"); return;
+            case 5: alert("all fields must be filled"); return;
+            default: break;
         }
-        else{
             $('.form').fadeOut(300);
             setTimeout(function(){
                 $('.questions').fadeIn(600);
             },300);
-        }
+        
     });
 
     function SubmitChecker(){
@@ -332,15 +337,7 @@ $(document).ready(function(){
                     var q3 = document.getElementById("answer-three").value;
                     var q4 = document.getElementById("answer-four").value;
                     var q5 = document.getElementById("answer-five").value;
-                    //console.table(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5)
-                    switch (checkForm(fname, regno, emailaddress, phno, q1, q2, q3, q4, q5) ){
-                        case 1: alert("Invalid registration number entered"); return;
-                        case 2: alert("Invalid email entered"); return;
-                        case 3: alert("Invalid name entered"); return;
-                        case 4: alert("Invalid phone number entered"); return;
-                        case 5: alert("all fields must be filled"); return;
-                        default: break;
-                    }
+                    
                     var submission = {
                         firstName : fname,
                         registrationNumber  : regno,
@@ -390,9 +387,8 @@ $(document).ready(function(){
             }
         },300);
     })
-    function checkForm(name, regno, email, ph,q1,q2,q3,q4,q5) {
-        if(!name || !regno || !email || !ph || !q1 || !q2 || !q3 
-            || !q4 || !q4)
+    function checkForm(name, regno, email, ph) {
+        if(!name || !regno || !email || !ph)
             return 5;
         if(!regno.match(/^1[5-9]...[0-9][0-9][0-9][0-9]$/))
             return 1;

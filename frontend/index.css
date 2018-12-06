@@ -95,8 +95,7 @@ body{
     width: 40vh;
     border:0px;
     outline:none;
-    border-radius: 50%;
-    background: url('assets/images/dsc-logo.svg');
+    background: url('assets/images/dsc-logo.svg') no-repeat center;
     object-fit: cover;
     position: relative;
     left: 50%;
@@ -104,6 +103,7 @@ body{
     cursor: pointer;
     opacity: 0.8;
     animation: dscbounce 3s ease .4s infinite;
+    background-size: auto 100%;
 }
 
 @keyframes dscbounce{
@@ -516,6 +516,35 @@ input:focus{
     display: none;
 }
 
+#honey-pot{
+    height: 0px;
+    width: 0px;
+    border:0px;
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+
+.warning{
+    z-index: 999999;
+    height: 100vh;
+    width: 100vw;
+    background: #0084f3;
+    text-align: center;
+    color: #ffffff;
+    font-family: Karla-Bold;
+    font-size: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.warning p{
+    position:relative;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
 @media only screen and (max-width: 831px) {
 
     .domains .domains-holder{
@@ -547,6 +576,7 @@ input:focus{
     }
 
 }
+
 
 .domains-holder{
     padding-bottom: 50px;
