@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bp = require("body-parser");
 const cors = require("cors");
-
+const Recaptcha = require("express-recaptcha").Recaptcha
+let recaptcha = new Recaptcha("6LcbHX8UAAAAADZ9V7zBlLcMO-UPeXQ0zl_ch0PB", process.env.CAPTSECRET);
 const app = express();
 
 app.use(cors());
@@ -16,9 +17,17 @@ mongoose.connect(process.env.DBURL, {useNewUrlParser: true});
 mongoose.connection.once("open",()=>console.log("connected"))
 .on("error",()=>console.log("error connecting to db"));
 
-app.get("/",(req,res,next)=>{
+app.get("/fill",(req,res,next)=>{
     res.sendFile(__dirname + "/frontend/index.html");
 });
+app.get("/",recaptcha.middleware.render,(req,res,next)=>{
+    res.send({captcha:res.recaptcha});
+});
+app.post("/",recaptcha.middleware.verify,(req,res,next)=>{
+    if(!req.recaptcha.error)
+        return res.redirect("/fill");
+    res.json({message:"ROBOT identified"});
+})
 app.use("/",require("./routes/user"));
 app.use("/",require("./routes/admin"));
 
