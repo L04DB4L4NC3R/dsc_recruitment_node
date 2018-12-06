@@ -5,10 +5,15 @@ const bp = require("body-parser");
 const cors = require("cors");
 const app = express();
 const request = require("request");
-
+const session = require("express-session")
 app.use(cors());
 app.use(bp.json());
 app.use(bp.urlencoded({extended:false}));
+app.use(session({
+    secret: process.env.CAPTSECRET,
+    resave: false,
+    saveUninitialized: true
+}))
 
 app.use(express.static("frontend"))
 
@@ -33,6 +38,7 @@ app.post("/",(req,res,next)=>{
         if(body.success !== undefined && !body.success) {
           return res.json({message:"Failed captcha verification"});
         }
+        req.session.captcha = true;
         res.redirect("/main")
       });
 
@@ -41,6 +47,8 @@ app.get("/",(req,res,next)=>{
     res.sendFile(__dirname + "/frontend/index.html");
 });
 app.get("/main",(req,res,next)=>{
+    if(!req.session.captcha)
+        return res.redirect("/")
     res.sendFile(__dirname + "/frontend/main.html");
 });
 

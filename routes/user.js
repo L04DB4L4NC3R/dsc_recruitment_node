@@ -2,6 +2,8 @@ const router = require("express").Router()
 const users = require("../schema").users;
 
 router.post("/record", (req,res,next)=>{
+    if(!req.session.captcha)
+        return res.redirect("/")
    
     if(!req.body.firstName || !req.body.registrationNumber || !req.body.emailAddress || 
         !req.body.phoneNumber || !req.body.answers.answerone || !req.body.answers.answertwo || 
@@ -24,7 +26,10 @@ router.post("/record", (req,res,next)=>{
             return res.json({message:"Already responded"});
         } 
         users.create(req.body)
-        .then((ud)=>res.json(ud))
+        .then((ud)=>{
+            req.session.captcha=!req.session.captcha;
+            res.json(ud);
+        })
         .catch(next);
     });
 });
