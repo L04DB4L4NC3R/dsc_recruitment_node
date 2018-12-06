@@ -5,10 +5,10 @@ Record and show recruitment details
 
 | route |  type  |  data  |  response  |
 |---|---|---|---|
-| /record | POST | User object | New record added | 
-| /show | POST with Authorization:token | {"query":"reg", "param": "17BCE2009"} (optional) | []User object or User object |
-| /manager/record | POST | User object | OK|
-| /admin/login | POST | {"passphrase":"some passphrase"} | {token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZXZlbCI6ImFkbWluIiwiaWF0IjoxNTQzNTc5Njg5fQ.wOE2EyoXSeNZ-YfsNWVwAWplPDEXI0yAWQ-pn6p7Hb8"} | 
+| /record | POST | User object | User object | 
+| /show | POST with Authorization:token | {"domain":"technical", "subdomain": "machinelearning"} | 
+[]User object |
+| /login | POST | {"passphrase":"some passphrase"} | {token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZXZlbCI6ImFkbWluIiwiaWF0IjoxNTQzNTc5Njg5fQ.wOE2EyoXSeNZ-YfsNWVwAWplPDEXI0yAWQ-pn6p7Hb8"} | 
 
 <br />
 <br />
@@ -18,22 +18,43 @@ Record and show recruitment details
 <br />
 
 ```json
+
 {
-    "Name":"dhruv sharma",
-    "Email":"dhruvsharma1016@gmail.com",
-    "Reg":"16BCE0955",
-    "ApplicantType":"design",
-    "q1":"answer",
-    "q2":"answer",
-    "q3":"answer",
-    "q4":"answer",
-    "q5":"answer",
-    "q6":"answer",
-    "q7":"answer",
-    "q8":"answer",
-    "q9":"answer",
-    "q10":"answer"
+    "sub_design": {
+        "uiux": false,
+        "graphic": false,
+        "video": false
+    },
+    "sub_management": {
+        "writer": false,
+        "manager": false
+    },
+    "sub_technical": {
+        "machinelearning": true,
+        "frontend": false,
+        "backend": false,
+        "python": false,
+        "android": false,
+        "general": false
+    },
+    "answers": {
+        "answerone": "aaaaa",
+        "answertwo": "bbbb",
+        "answerthree": "cccc",
+        "answerfour": "dddd",
+        "answerfive": "eeeee"
+    },
+    "technical": true,
+    "design": false,
+    "management": false,
+    "_id": "5c08f9e9bed9e45a40de026c",
+    "firstName": "angad sharma",
+    "registrationNumber": "17BCE2009",
+    "phoneNumber": "1111111111",
+    "emailAddress": "sadsda@l.com",
+    "__v": 0
 }
+
 ```
 
 <br />

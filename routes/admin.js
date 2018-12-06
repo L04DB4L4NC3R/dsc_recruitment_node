@@ -20,8 +20,9 @@ router.post("/show", (req,res,next)=>{
     jwt.verify(req.get("Authorization"), process.env.SECRET, (err, data)=>{
         if(err || data.level != "admin")
             return res.json({message:"Invalid token"});
-        query={};
-        query[req.body.query]=req.body.param;
+        query={}
+        query[req.body.domain]=true;
+        query[`sub_${req.body.domain}.${req.body.subdomain}`]=true;
         users.find(query)
         .then(d=>res.json(d))
         .catch(next);
