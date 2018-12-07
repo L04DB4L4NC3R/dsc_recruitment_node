@@ -20,6 +20,7 @@ router.post("/show", (req,res,next)=>{
     jwt.verify(req.get("Authorization"), process.env.SECRET, (err, data)=>{
         if(err || data.level != "admin")
             return res.json({message:"Invalid token"});
+        console.log(req.body)
         query={}
         query[req.body.domain]=true;
         query[`sub_${req.body.domain}.${req.body.subdomain}`]=true;

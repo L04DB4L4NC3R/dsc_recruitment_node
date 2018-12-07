@@ -46,6 +46,11 @@ app.post("/",(req,res,next)=>{
 app.get("/",(req,res,next)=>{
     res.sendFile(__dirname + "/frontend/index.html");
 });
+
+app.get("/admin",(req,res,next)=>{
+    res.sendFile(__dirname + "/frontend/admin.html");
+});
+
 app.get("/main",(req,res,next)=>{
     if(!req.session.captcha)
         return res.redirect("/")
