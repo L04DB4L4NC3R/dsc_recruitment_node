@@ -24,6 +24,10 @@ router.post("/show", (req,res,next)=>{
         query={}
         query[req.body.domain]=true;
         query[`sub_${req.body.domain}.${req.body.subdomain}`]=true;
+        let reg=new RegExp("1"+(9-req.body.year)+"[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]");
+        console.log(reg)
+        if(req.body.year)
+            query["registrationNumber"]={$regex:reg}
         users.find(query)
         .then(d=>res.json(d))
         .catch(next);

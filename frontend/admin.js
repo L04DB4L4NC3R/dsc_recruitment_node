@@ -24,6 +24,10 @@ $("#pass").on("click",(e)=>{
                         <input placeholder="Enter subdomain" id="subdomain" type="text" class="validate">
                       </div>
                     </div>
+
+                    <div class="input-field col s6">
+                        <input placeholder="Enter year" id="year" type="number" class="validate">
+                      </div>
       
                     <center><button id="getbtn" class="btn waves-effect waves-light" type="submit" name="action">Submit
                     </button></center>
@@ -50,7 +54,8 @@ $("#pass").on("click",(e)=>{
                             method:"POST",
                             data:{
                                 domain:$("#domain").val(),
-                                subdomain:$("#subdomain").val()
+                                subdomain:$("#subdomain").val(),
+                                year:$("#year").val()
                             },
                             headers:{"Authorization":localStorage.getItem("token")},
                             success:(data)=>{
