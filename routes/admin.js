@@ -20,16 +20,19 @@ router.post("/show", (req,res,next)=>{
     jwt.verify(req.get("Authorization"), process.env.SECRET, (err, data)=>{
         if(err || data.level != "admin")
             return res.json({message:"Invalid token"});
-        console.log(req.body)
         query={}
         query[req.body.domain]=true;
-        query[`sub_${req.body.domain}.${req.body.subdomain}`]=true;
-        let reg=new RegExp("1"+(9-req.body.year)+"[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]");
-        console.log(reg)
-        if(req.body.year)
+        if(req.subdomain)
+            query[`sub_${req.body.domain}.${req.body.subdomain}`]=true;
+        if(req.body.year){
+            let reg=new RegExp("1"+(9-req.body.year)+"[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]");
             query["registrationNumber"]={$regex:reg}
+        }
         users.find(query)
-        .then(d=>res.json(d))
+        .then((d)=>{
+            console.log(d.length);
+            res.json(d);
+        })
         .catch(next);
     })
     
