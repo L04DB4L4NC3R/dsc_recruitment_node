@@ -323,6 +323,7 @@ body{
     background: url('assets/images/domains/Technical.svg');
     background-size: cover;
     opacity: 0.1;
+    pointer-events: none;
 }
 
 #designing img{
