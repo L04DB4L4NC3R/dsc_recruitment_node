@@ -34,6 +34,11 @@ $("#pass").on("click",(e)=>{
                     <br>
                     <center><button id="logout" class="btn waves-effect waves-light" name="action">logout
                     </button></center>
+                    <br>
+                    <center><button id="count" class="btn waves-effect waves-light" name="action">Registration count
+                    </button></center>
+
+
                     <div id="result"></div>
 
                     <script>
@@ -45,6 +50,16 @@ $("#pass").on("click",(e)=>{
                         $("#first").html("Logged out");
                         window.location.replace("/admin");
                     })
+
+
+                    $("#count").on("click", (e)=>{
+                        e.preventDefault();
+                        $.get("/count", (resp)=>{
+                            $("#count").html(resp.count);
+                        })
+                    })
+
+
 
                     $("#getbtn").on("click",(e)=>{
                         $("#result").html('');
