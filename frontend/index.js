@@ -61,10 +61,10 @@ $(document).ready(function(){
     var y = 0;
     var z = 0;
 
-    $('#technical').click(function(){
-        technical = !technical;
-        x=!x;
-    })
+    // $('#technical').click(function(){
+    //     technical = !technical;
+    //     x=!x;
+    // })
 
     $('#designing').click(function(){
         designing = !designing;
@@ -343,7 +343,7 @@ $(document).ready(function(){
                         registrationNumber  : regno,
                         phoneNumber       : phno,
                         emailAddress  : emailaddress,
-                        technical : technical,
+                        technical : false,//technical,
                         design : designing,
                         management : management,
                         sub_design:{
@@ -356,12 +356,12 @@ $(document).ready(function(){
                             manager : manager
                         },
                         sub_technical:{
-                            machinelearning : machinelearning,
-                            frontend : frontend,
-                            backend : backend,
-                            python : python,
-                            android: android,
-                            general : general
+                            machinelearning : false,//machinelearning,
+                            frontend : false,//frontend,
+                            backend :false,//backend,
+                            python : false,//python,
+                            android: false,//android,
+                            general : false//general
                         },
                         answers:{
                             answerone : q1,

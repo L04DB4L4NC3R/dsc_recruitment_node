@@ -249,10 +249,10 @@ body{
     width: 100%;
 }
 
-.domain-category-clicked #technical img{
+/* .domain-category-clicked #technical img{
     background: url('assets/images/domains/TechnicalActive.svg');
     background-size: cover;
-}
+} */
 
 .domain-category-clicked #designing img{
     background: url('assets/images/domains/DesigningActive.svg');
@@ -263,7 +263,7 @@ body{
     background: url('assets/images/domains/ManagementActive.svg');
     background-size: 100% auto;
 }
-
+/* 
 .domain-category-clicked #machinelearning img{
     background: url('assets/images/technicalsubdomains/MachineLearningActive.svg');
     background-size: 100% 100%;
@@ -292,7 +292,7 @@ body{
 .domain-category-clicked #general img{
     background: url('assets/images/technicalsubdomains/GeneralActive.svg');
     background-size: 100% 100%;
-}
+} */
 
 .domain-category-clicked #uiux img{
     background: url('assets/images/designsubdomains/UIUXActive.svg');
@@ -322,6 +322,7 @@ body{
 #technical img{
     background: url('assets/images/domains/Technical.svg');
     background-size: cover;
+    opacity: 0.1;
 }
 
 #designing img{
