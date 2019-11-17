@@ -61,10 +61,10 @@ $(document).ready(function(){
     var y = 0;
     var z = 0;
 
-    // $('#technical').click(function(){
-    //     technical = !technical;
-    //     x=!x;
-    // })
+    $('#technical').click(function(){
+        technical = !technical;
+        x=!x;
+    })
 
     $('#designing').click(function(){
         designing = !designing;
